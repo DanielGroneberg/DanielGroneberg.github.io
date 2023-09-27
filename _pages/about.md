@@ -7,20 +7,13 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
-## Technical Skills: 
-- Python
-  - meme
-- SQL
-- GIS
-------------
 ## Education
 - Data Science Immersive | General Assembly (_September 2023_)
                		
 - B.S., Geology	| Western Washington University (_December 2021_)
 --------
 ## Data Science Projects
-### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project) | Python, netCDF4, statsmodels, sktime, sklearn 
+### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project) | Python: netCDF4, statsmodels, sktime, sklearn 
 ![SARIMA Model](/images/Sarima_overall.png)
 *Underfit SARIMA model trained with incorrect stationarity assumption, later replaced with better-performing model.*
 
