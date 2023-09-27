@@ -9,8 +9,9 @@ redirect_from:
 ---
 ## Education
 
-- Data Science Immersive | General Assembly (_September 2023_)
 - B.S., Geology	| Western Washington University (_December 2021_)
+- Data Science Immersive | General Assembly (_September 2023_)
+
 --------
 ## Data Science Projects
 ### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project) | Python: netCDF4, statsmodels, sktime, sklearn 
