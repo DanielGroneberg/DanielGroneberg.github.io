@@ -19,3 +19,9 @@ author_profile: true
 - Oversaw trench backfill and provided immediate recommendations to meet 95% soil compaction targets.
 -	Collected data and drafted daily technical reports outlining findings.
 -	Communicated with technical and non-technical audiences including project geologist and site foreman.
+
+**Packaging Associate, Boulder Organic Foods (_October 2016 – March 2017_)**
+- Promoted to Second Shift lead after three months.
+- Oversaw team of production floor workers.
+- Took hourly soup temperature measurments to enture food safety.
+- Logged start and stop times of production runs.
