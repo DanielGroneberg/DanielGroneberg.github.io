@@ -32,8 +32,8 @@ Developed a timeseries forecast for key economic metrics including Federal Reser
 
 ### [Predicting Subreddit from Sample Post](https://github.com/DanielGroneberg/project-3) | Python: NLTK, spacy, sklearn
 ![Economic Metrics](/images/sentiment_distribution_by_sub.png)
-*Distribution of sentiment across posts from the two subreddits examined: r/Jobs and r/AntiWork
+*Distribution of sentiment across posts from the two subreddits examined: r/Jobs and r/AntiWork*
 
 Developed a subreddit classification model using 7,155 posts scraped from r/Jobs and r/AntiWork. Examined how sentiment varried between the two subreddits when certain words like "manager" or "interview" were found in a post. Token vectorized the text data and experimented with logistic regression, kNN, random forest and gradient boosted models.
 
-Best performing model was a stacking classifier model using logistic regression and random forest classifier base estimators with a gradient boosting classifier as the final estimator, which achieved a classification accuracy score of .85.
+Best performing model was a stacking classifier model using logistic regressor and random forest classifier as the base estimators with a gradient boosting classifier as the final estimator, which achieved a classification accuracy score of .85.
