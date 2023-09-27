@@ -25,7 +25,7 @@ Developed a timeseries forecast for key economic metrics including Federal Reser
 ### [Predicting Subreddit from Sample Post](https://github.com/DanielGroneberg/project-3) | Python: NLTK, spacy, sklearn
 ![Economic Metrics](/images/sentiment_distribution_by_sub.png)
 
-
+---------------
 ## Education
 ### General Assembly (_September 2023_)
 Certificate of Completion, Data Science Immersive 
