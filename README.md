@@ -1,31 +1,41 @@
-A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
+# Data Scientist
+#### Technical Skills: Python, SQL, GIS
+------------
+## Education
+- Data Science Immersive | General Assembly (_September 2023_)							       		
+- B.S., Geology	| Western Washington University (_December 2021_)
+--------
+## Projects
+### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project)
+![SARIMA Model](/portfolio_assets/img/Sarima_overall.png)
+*Underfit SARIMA model trained with incorrect stationarity assumption, later replaced with better-performing model.*
 
-I think I've got things running smoothly and fixed some major bugs, but feel free to file issues or make pull requests if you want to improve the generic template / theme.
+Used **Python** to forecast soil moisture in the United States using 64 years of climate data. Observed distinct shift from stationary soil moisture to decreasing moisture over time around year 2010. This shift took place close to original 80/20 train/test split resulting in an assesment of data as stationary overall which did not hold for test set and subsequent overestimation of soil moisture in the test set. SARIMA and Holt-Winters models both performed poorly with a best R2 score of .42. Applying Holt-Winters additive seasonality model did not see an improvment in performance. Forecasting using only section of data with downward trend (after 2010) resulted in much improved best R2 score of .76
 
-### Note: if you are using this repo and now get a notification about a security vulnerability, delete the Gemfile.lock file. 
 
-# Instructions
+### [Timeseries Forecast of Federal Reserve Interest Rates](https://github.com/DanielGroneberg/DSI-Project-5)
+![Economic Metrics](/portfolio_assets/img/plots.png)
+*Economic metrics used to develop vector autoregression including sentiment feature engineered from scaped Beige Book reports.*
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+Developed a timeseries forecast for key economic metrics including Federal Reserve interest rates using **Python**. Scraped 50 years of [Federal Reserve Beige Book transcripts](https://www.minneapolisfed.org/region-and-community/regional-economic-indicators/beige-book-archive) using **BeautifulSoup** and applied natural language processing to engineer sentiment feature from text data. Used a Vector Autoregression model to forecast interest rates.
 
-See more info at https://academicpages.github.io/
+### [Predicting Subreddit from Sample Post](https://github.com/DanielGroneberg/project-3)
+![Economic Metrics](/portfolio_assets/img/sentiment_distribution_by_sub.png)
 
-## To run locally (not on GitHub Pages, to serve on your own computer)
+-----------
+## Work Experience
+**Bike Delivery Driver at Jimmy Johns (_January 2023 - June 2023_)**
+-	Assisted customers in understanding the menu, received orders over the phone and face-to-face.
+-	Consistently exceeded 30-minute delivery time goals.
+-	Developed and rode efficient delivery routes tailored for each batch of orders while under time pressure.
+-	Updated routes in real time if new construction or traffic conditions encountered.
+-	Communicated with coworkers to make routes as efficient as possible.
 
-1. Clone the repository and made updates as detailed above
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle clean` to clean up the directory (no need to run `--force`)
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+**Stagehand with IATSE Local 15 (_September 2022 - June 2023_)**
+- Built video walls, installed lighting fixtures, and followed instructions from a variety of teams.
+-	Worked efficiently in teams in order to meet road crew deadline requirements.
 
-# Changelog -- bugfixes and enhancements
-
-There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
-
-To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
+**Geotechnical Field Technician at Earth Solutions, NW (_July 2022 - September 2022_)**
+- Oversaw trench backfill and provided immediate recommendations to meet 95% soil compaction targets.
+-	Collected data and drafted daily technical reports outlining findings.
+-	Communicated with technical and non-technical audiences including project geologist and site foreman.
