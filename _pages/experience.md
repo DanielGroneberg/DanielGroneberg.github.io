@@ -4,7 +4,6 @@ title: "Work Experience"
 permalink: /experience/
 author_profile: true
 ---
-## Work Experience
 **Bike Delivery Driver at Jimmy Johns (_January 2023 - June 2023_)**
 -	Assisted customers in understanding the menu, received orders over the phone and face-to-face.
 -	Consistently exceeded 30-minute delivery time goals.
