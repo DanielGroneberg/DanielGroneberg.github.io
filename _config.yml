@@ -88,8 +88,7 @@ author:
   email            : "dgroneberg1@gmail.com"
   github           : "DanielGroneberg"
   linkedin         : "daniel-groneberg/"
-  bio              : "/files/daniel_groneberg_dsi_resume_template.pdf"
-
+  bio              : [Resume](/files/daniel_groneberg_dsi_resume_template.pdf)
 
 # Reading Files
 include:
