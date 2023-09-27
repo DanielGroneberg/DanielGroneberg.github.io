@@ -7,16 +7,6 @@ redirect_from:
   - /about/
   - /about.html
 ---
-## Education
-
-### General Assembly (_September 2023_)
-Certificate of Completion, Data Science Immersive 
-
-
-### Western Washington University (_December 2021_)
-B.S., Geology
-
-
 ## Data Science Projects
 ### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project) | Python: netCDF4, statsmodels, sktime, sklearn 
 ![SARIMA Model](/images/Sarima_overall.png)
@@ -34,3 +24,12 @@ Developed a timeseries forecast for key economic metrics including Federal Reser
 
 ### [Predicting Subreddit from Sample Post](https://github.com/DanielGroneberg/project-3) | Python: NLTK, spacy, sklearn
 ![Economic Metrics](/images/sentiment_distribution_by_sub.png)
+
+
+## Education
+### General Assembly (_September 2023_)
+Certificate of Completion, Data Science Immersive 
+
+
+### Western Washington University (_December 2021_)
+B.S., Geology
