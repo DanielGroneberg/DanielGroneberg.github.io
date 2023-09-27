@@ -8,7 +8,7 @@
 # Site Settings
 locale                   : "en-US"
 title                    : "Daniel Groneberg | Data Scientist"
-title_separator          : "-"
+title_separator          : " "
 name                     : &name "Daniel Groneberg"
 description              : &description "Data Scientist with a Background in Earth Science"
 url                      : https://DanielGroneberg.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
