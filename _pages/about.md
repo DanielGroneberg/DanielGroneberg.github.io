@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Portfolio"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -12,7 +12,8 @@ redirect_from:
 #### Technical Skills: Python, SQL, GIS
 ------------
 ## Education
-- Data Science Immersive | General Assembly (_September 2023_)							       		
+- Data Science Immersive | General Assembly (_September 2023_)
+               		
 - B.S., Geology	| Western Washington University (_December 2021_)
 --------
 ## Projects
