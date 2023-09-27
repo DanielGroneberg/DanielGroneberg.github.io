@@ -86,30 +86,8 @@ author:
   location         : "Seattle, WA"
   employer         :
   email            : "dgroneberg1@gmail.com"
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "academicpages"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         : "https://www.linkedin.com/in/daniel-groneberg"
-  pinterest        :
-  soundcloud       :
-  steam            :
-  tumblr           :
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
+  github           : "DanielGroneberg"
+  linkedin         : "daniel-groneberg"
 
 
 # Reading Files
