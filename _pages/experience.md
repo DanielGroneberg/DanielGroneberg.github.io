@@ -24,4 +24,4 @@ author_profile: true
 - Promoted to Second Shift lead after three months.
 - Oversaw team of production floor workers.
 - Took hourly soup temperature measurments to enture food safety.
-- Logged start and stop times of production runs.
+- Logged results of X-ray machine tests and start and stop times of production runs.
