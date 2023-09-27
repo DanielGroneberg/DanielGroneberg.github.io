@@ -19,12 +19,12 @@ redirect_from:
                		
 - B.S., Geology	| Western Washington University (_December 2021_)
 --------
-## Projects
-### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project)
+## Data Science Projects
+### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project) | Python, netCDF4, statsmodels, sktime, sklearn 
 ![SARIMA Model](/images/Sarima_overall.png)
 *Underfit SARIMA model trained with incorrect stationarity assumption, later replaced with better-performing model.*
 
-Used **Python** to forecast soil moisture in the United States using 64 years of climate data. Observed distinct shift from stationary soil moisture to decreasing moisture over time around year 2010. This shift took place close to original 80/20 train/test split resulting in an assesment of data as stationary overall which did not hold for test set and subsequent overestimation of soil moisture in the test set. SARIMA and Holt-Winters models both performed poorly with a best R2 score of .42. Applying Holt-Winters additive seasonality model did not see an improvment in performance. Forecasting using only section of data with downward trend (after 2010) resulted in much improved best R2 score of .76
+Used **Python** to forecast soil moisture in the United States using 64 years of climate data. Extracted 50 years of .nc data with ***netCDF4** and constructed a datetime index using encoded day count data. Applied Augmented Dickey–Fuller test to check for seasonality. Observed distinct shift from stationary soil moisture to decreasing moisture over time around year 2010. This shift took place close to original 80/20 train/test split resulting in an assesment of data as stationary overall which did not hold for test set and subsequent overestimation of soil moisture in the test set. SARIMA and Holt-Winters models both performed poorly with a best R2 score of .42. Applying Holt-Winters additive seasonality model did not see an improvment in performance. Forecasting using only section of data with downward trend (after 2010) resulted in much improved best R2 score of .76
 
 
 ### [Timeseries Forecast of Federal Reserve Interest Rates](https://github.com/DanielGroneberg/DSI-Project-5)
