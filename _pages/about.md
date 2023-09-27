@@ -1,15 +1,18 @@
 ---
 permalink: /
-title: "Portfolio"
-excerpt: "About me"
+title: "About me"
+#excerpt: "About me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-# Data Scientist
-#### Technical Skills: Python, SQL, GIS
+## Technical Skills: 
+- Python
+  - meme
+- SQL
+- GIS
 ------------
 ## Education
 - Data Science Immersive | General Assembly (_September 2023_)
