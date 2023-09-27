@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Daniel Groneberg | Data Scientist"
 title_separator          : "-"
-name                     : &name "test"
+name                     : &name "Daniel Groneberg"
 description              : &description "Data Scientist with a Background in Earth Science"
 url                      : https://DanielGroneberg.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "DanielGroneberg"
+  name             : "Daniel Groneberg"
   avatar           : "danicon3.png"
   bio              : "Data Scientist with a Background in Earth Science"
   location         : "Seattle, WA"
