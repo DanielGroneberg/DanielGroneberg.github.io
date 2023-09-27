@@ -6,7 +6,8 @@ author_profile: true
 ---
 
 ## Education
-### General Assembly (_September 2023_)*Certificate of Completion, Data Science Immersive*
+### General Assembly (_September 2023_)
+*Certificate of Completion, Data Science Immersive*
 
 ### Western Washington University (_December 2021_)
 *B.S., Geology*
