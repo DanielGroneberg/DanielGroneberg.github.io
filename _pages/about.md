@@ -16,7 +16,7 @@ Certificate of Completion, Data Science Immersive
 ### Western Washington University (_December 2021_)
 B.S., Geology
 
---------
+
 ## Data Science Projects
 ### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project) | Python: netCDF4, statsmodels, sktime, sklearn 
 ![SARIMA Model](/images/Sarima_overall.png)
@@ -31,23 +31,6 @@ Used **Python** to forecast soil moisture in the United States using 64 years of
 
 Developed a timeseries forecast for key economic metrics including Federal Reserve interest rates using **Python**. Scraped 50 years of [Federal Reserve Beige Book transcripts](https://www.minneapolisfed.org/region-and-community/regional-economic-indicators/beige-book-archive) using **BeautifulSoup** and applied natural language processing to engineer sentiment feature from text data. Used a Vector Autoregression model to forecast interest rates.
 
+
 ### [Predicting Subreddit from Sample Post](https://github.com/DanielGroneberg/project-3) | Python: NLTK, spacy, sklearn
 ![Economic Metrics](/images/sentiment_distribution_by_sub.png)
-
------------
-## Work Experience
-**Bike Delivery Driver at Jimmy Johns (_January 2023 - June 2023_)**
--	Assisted customers in understanding the menu, received orders over the phone and face-to-face.
--	Consistently exceeded 30-minute delivery time goals.
--	Developed and rode efficient delivery routes tailored for each batch of orders while under time pressure.
--	Updated routes in real time if new construction or traffic conditions encountered.
--	Communicated with coworkers to make routes as efficient as possible.
-
-**Stagehand with IATSE Local 15 (_September 2022 - June 2023_)**
-- Built video walls, installed lighting fixtures, and followed instructions from a variety of teams.
--	Worked efficiently in teams in order to meet road crew deadline requirements.
-
-**Geotechnical Field Technician at Earth Solutions, NW (_July 2022 - September 2022_)**
-- Oversaw trench backfill and provided immediate recommendations to meet 95% soil compaction targets.
--	Collected data and drafted daily technical reports outlining findings.
--	Communicated with technical and non-technical audiences including project geologist and site foreman.
