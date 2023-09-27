@@ -1,16 +1,17 @@
 ---
 layout: archive
-title: "Education & Work Experience"
+title: "Work Experience and Education"
 permalink: /experience/
 author_profile: true
 ---
-# Education
+
+## Education
 ### General Assembly (_September 2023_)*Certificate of Completion, Data Science Immersive*
 
 ### Western Washington University (_December 2021_)
 *B.S., Geology*
 
-# Work Experience
+## Work Experience
 **Bike Delivery Driver at Jimmy Johns (_January 2023 - June 2023_)**
 -	Assisted customers in understanding the menu, received orders over the phone and face-to-face.
 -	Consistently exceeded 30-minute delivery time goals.
