@@ -5,4 +5,4 @@ permalink: /resume/
 author_profile: true
 ---
 
-![SARIMA Model](/files/daniel_groneberg_dsi_resume_template.pdf)
+![resume](/files/daniel_groneberg_dsi_resume_template.pdf)
