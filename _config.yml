@@ -86,10 +86,11 @@ author:
   location         : "Seattle, WA"
   employer         :
   email            : "dgroneberg1@gmail.com"
+    text           : "dgroneberg1@gmail.com"
   github           : "DanielGroneberg"
   linkedin         : "daniel-groneberg/"
-  uri              : "/files/daniel_groneberg_dsi_resume_template.pdf"
-    text:          : "resume"
+  #uri              : "/files/daniel_groneberg_dsi_resume_template.pdf"
+   # text:          : "resume"
 
 
 # Reading Files
