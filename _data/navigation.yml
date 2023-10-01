@@ -2,12 +2,6 @@
 main:
  # - title: "Projects and Education"
   #  url: /projects/   
-        
-  - title: "Work Experience & Education"
-    url: /experience/
-
-  - title: "Technical Skills"
-    url: /skills/
-
+  
   - title: "View Resume"
     url: /resume/
