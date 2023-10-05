@@ -27,8 +27,22 @@ jobs:
       - name: Build Jekyll
         run: bundle exec jekyll build
 
+  report-build-status:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report Build Status
+        run: |
+          # Add your code to report build status here
+          # This step can include notifications or other actions
+
+  deploy:
+    needs: report-build-status
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         run: |
+          # Add your deployment code here
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git checkout --orphan gh-pages
