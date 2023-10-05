@@ -36,16 +36,21 @@ jobs:
           # Add your code to report build status here
           # This step can include notifications or other actions
 
-  deploy:
-    needs: report-build-status
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        run: |
-          # Add your deployment code here
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git checkout --orphan gh-pages
-          git --work-tree _site add --all
-          git --work-tree _site commit -m "GitHub Pages deploy"
-          git push origin HEAD:gh-pages --force
+deploy:
+  needs: report-build-status
+  runs-on: ubuntu-latest
+  steps:
+    - name: Prepare for Deployment
+      run: |
+        # Initialize a Git repository in the _site directory
+        cd _site
+        git init
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        
+        # Add all files and commit changes
+        git add --all
+        git commit -m "GitHub Pages deploy"
+        
+        # Push changes to the gh-pages branch
+        git push --force --quiet "https://${{ secrets.GITHUB_TOKEN }}@github.com/username/repo.git" master:gh-pages
