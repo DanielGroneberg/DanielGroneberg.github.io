@@ -3,8 +3,7 @@ name: Build and Deploy Jekyll
 on:
   push:
     branches:
-      - one_branch # Replace with your branch name
-
+      - one_page
 jobs:
   build:
     runs-on: ubuntu-latest
