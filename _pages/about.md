@@ -10,8 +10,7 @@ redirect_from:
 # About Me {#about}
 This is the content of the About Me section
 
-
-# Resume {#resume}
+# About Me {#projects}
 ## Data Science Projects
 ### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project) | Python: netCDF4, statsmodels, sktime, sklearn 
 ![SARIMA Model](/images/Sarima_overall.png)
@@ -34,3 +33,6 @@ Developed a timeseries forecast for key economic metrics including Federal Reser
 Developed a subreddit classification model using 7,155 posts scraped from r/Jobs and r/AntiWork. Examined how sentiment varried between the two subreddits when certain words like "manager" or "interview" were found in a post. Token vectorized the text data and experimented with logistic regression, kNN, random forest and gradient boosted models.
 
 Best performing model was a stacking classifier model using logistic regressor and random forest classifier as the base estimators with a gradient boosting classifier as the final estimator, which achieved a classification accuracy score of .85.
+
+# Resume {#resume}
+<object data="{{ site.url }}{{ site.baseurl }}/files/daniel_groneberg_dsi_resume_template.pdf" width="1000" height="1000" type="application/pdf"></object>
