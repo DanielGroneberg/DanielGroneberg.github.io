@@ -53,4 +53,4 @@ jobs:
         git -C _site commit -m "GitHub Pages deploy"
         
         # Push changes to the gh-pages branch
-        git -C _site push --force --quiet "https://${{ secrets.GITHUB_TOKEN }}@github.com/DanielGroneberg/DanielGroneberg.github.io" master:gh-pages
+        git -C _site push --force --quiet "https://${{ secrets.GITHUB_TOKEN }}@danielgroneberg.github.io/" master:gh-pages
