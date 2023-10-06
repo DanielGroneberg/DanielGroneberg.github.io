@@ -37,9 +37,9 @@ jobs:
           # This step can include notifications or other actions
 
   deploy:
-  needs: report-build-status
-  runs-on: ubuntu-latest
-  steps:
+    needs: report-build-status
+    runs-on: ubuntu-latest
+    steps:
     - name: Prepare for Deployment
       run: |
         # Initialize a Git repository in the _site directory
