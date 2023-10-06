@@ -7,6 +7,11 @@ redirect_from:
   - /about/
   - /about.html
 ---
+# About Me {#about}
+This is the content of the About Me section
+
+
+# Resume {#resume}
 ## Data Science Projects
 ### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project) | Python: netCDF4, statsmodels, sktime, sklearn 
 ![SARIMA Model](/images/Sarima_overall.png)
