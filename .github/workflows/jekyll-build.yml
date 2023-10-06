@@ -29,6 +29,15 @@ jobs:
           bundle exec jekyll build --destination _site
           cd _site
           git init
+          
+  report-build-status:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report Build Status
+        run: |
+          # Add your code to report build status here
+          # This step can include notifications or other actions
 
   deploy:
     needs: report-build-status
