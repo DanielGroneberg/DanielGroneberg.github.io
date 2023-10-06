@@ -28,7 +28,7 @@ jobs:
         run: |
           bundle exec jekyll build --destination _site
           cd _site
-          git init
+          git init  # Initialize _site as a Git repository
           
   report-build-status:
     needs: build
