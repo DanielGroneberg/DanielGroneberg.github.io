@@ -29,7 +29,10 @@ jobs:
           bundle exec jekyll build --destination _site
           cd _site
           git init
-          
+
+      - name: List contents of _site directory
+        run: ls -l _site
+
   report-build-status:
     needs: build
     runs-on: ubuntu-latest
