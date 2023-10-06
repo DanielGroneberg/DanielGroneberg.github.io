@@ -1,31 +1,47 @@
----
-layout: compress
----
-
-{% include base_path %}
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+<head>
+  {% include head.html %}
+  {% include head/custom.html %}
+</head>
+<body>
 
-  <body>
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="#resume">View Resume</a></li>
+      <li><a href="#about">About Me</a></li>
+      <!-- Add more links for other sections as needed -->
+    </ul>
+  </nav>
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+  <!-- Content Sections -->
+  {{ content }} <!-- Include the content from the Markdown files here -->
 
-    {{ content }}
+  <!-- Smooth Scrolling JavaScript -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
+  <div class="page__footer">
+    <footer>
+      {% include footer/custom.html %}
+      {% include footer.html %}
+    </footer>
+  </div>
 
-    {% include scripts.html %}
+  {% include scripts.html %}
 
-  </body>
+</body>
 </html>
