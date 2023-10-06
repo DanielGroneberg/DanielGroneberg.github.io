@@ -24,18 +24,11 @@ jobs:
       - name: Install Jekyll dependencies
         run: bundle install
 
-      - name: Build Jekyll
-        run: bundle exec jekyll build --destination _site
-
-
-  report-build-status:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Report Build Status
+      - name: Build Jekyll and Initialize _site as Git repository
         run: |
-          # Add your code to report build status here
-          # This step can include notifications or other actions
+          bundle exec jekyll build --destination _site
+          cd _site
+          git init
 
   deploy:
     needs: report-build-status
