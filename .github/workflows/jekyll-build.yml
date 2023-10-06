@@ -46,19 +46,17 @@ jobs:
     needs: report-build-status
     runs-on: ubuntu-latest
     steps:
-    - name: Initialize _site as a Git repository
-      run: |
-        cd _site
-        git init
-
-    - name: Prepare for Deployment
-      run: |
-        git config user.name "GitHub Actions"
-        git config user.email "actions@github.com"
-
-        # Add all files and commit changes from the _site directory
-        git -C _site add --all
-        git -C _site commit -m "GitHub Pages deploy"
-
-        # Push changes to the gh-pages branch
-        git -C _site push --force --quiet "https://${{ secrets.GITHUB_TOKEN }}@github.com/DanielGroneberg/DanielGroneberg.github.io.git" master:gh-pages
+      - name: Prepare for Deployment
+        working-directory: ./_site  # Specify the working directory
+        run: |
+          git init
+  
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+  
+          # Add all files and commit changes
+          git add --all
+          git commit -m "GitHub Pages deploy"
+  
+          # Push changes to the gh-pages branch
+          git push --force --quiet "https://${{ secrets.GITHUB_TOKEN }}@github.com/DanielGroneberg/DanielGroneberg.github.io.git" master:gh-pages
