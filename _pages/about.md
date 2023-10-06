@@ -27,7 +27,7 @@ Used **Python** to forecast soil moisture in the United States. Extracted 64 yea
 Developed a timeseries forecast for key economic metrics including Federal Reserve interest rates using **Python**. Scraped 50 years of [Federal Reserve Beige Book transcripts](https://www.minneapolisfed.org/region-and-community/regional-economic-indicators/beige-book-archive) using **BeautifulSoup** and applied natural language processing to engineer sentiment feature from text data. Used a Vector Autoregression model to forecast interest rates.
 
 
-### [Predicting Subreddit from Sample Post](https://github.com/DanielGroneberg/project-3) | Python: NLTK, spacy, sklearn
+### [Predicting Subreddit from Sample Post](https://github.com/DanielGroneberg/Predicting-Subreddit-from-Sample-Post) | Python: NLTK, spacy, sklearn
 ![Economic Metrics](/images/sentiment_distribution_by_sub.png)
 *Distribution of sentiment across posts from the two subreddits examined: r/Jobs and r/AntiWork*
 
