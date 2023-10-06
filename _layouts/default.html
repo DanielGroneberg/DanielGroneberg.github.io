@@ -3,6 +3,32 @@
 <head>
   {% include head.html %}
   {% include head/custom.html %}
+  <style>
+    /* Custom CSS for Navigation Buttons */
+    #scroll-buttons {
+      /* Add your styling rules here */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      padding: 10px;
+      position: fixed; /* Add this line to fix the position */
+      top: 0; /* Add this line to position it at the top of the screen */
+      width: 100%; /* Add this line to make it full-width */
+      z-index: 1000; /* Add this line to ensure it appears above other content */
+    }
+
+    #scroll-buttons ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    #scroll-buttons li {
+      /* Add styling for individual buttons here */
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,6 +43,16 @@
       </ul>
     </nav>
   </div>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="#resume">View Resume</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li> <!-- Add this line for the Projects section -->
+      <!-- Add more links for other sections as needed -->
+    </ul>
+  </nav>
 
   <!-- Content Sections -->
   {{ content }} <!-- Include the content from the Markdown files here -->
@@ -36,29 +72,6 @@
       });
     });
   </script>
-
-  <!-- Custom CSS for Navigation Buttons -->
-  <style>
-    #scroll-buttons {
-      /* Add your styling rules here */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #333;
-      padding: 10px;
-    }
-
-    #scroll-buttons ul {
-      list-style-type: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    #scroll-buttons li {
-      /* Add styling for individual buttons here */
-      margin: 0;
-    }
-  </style>
 
   <div class="page__footer">
     <footer>
