@@ -6,6 +6,8 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 destination: _site
+timezone: America/Los_Angeles
+
 
 # Site Settings
 locale                   : "en-US"
