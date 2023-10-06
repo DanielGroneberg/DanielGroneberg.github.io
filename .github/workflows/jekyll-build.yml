@@ -48,9 +48,12 @@ jobs:
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
         
+        # Change directory to the root of your repository
+        cd $GITHUB_WORKSPACE
+        
         # Add all files and commit changes from the _site directory
         git -C _site add --all
         git -C _site commit -m "GitHub Pages deploy"
         
         # Push changes to the gh-pages branch
-        git -C _site push --force --quiet "https://${{ secrets.GITHUB_TOKEN }}@danielgroneberg.github.io/" master:gh-pages
+        git -C _site push --force --quiet "https://${{ secrets.GITHUB_TOKEN }}@github.com/DanielGroneberg/DanielGroneberg.github.io.git" master:gh-pages
