@@ -48,7 +48,14 @@ jobs:
   deploy:
     needs: report-build-status
     runs-on: ubuntu-latest
+
+    
     steps:
+      - name: Debug - List Workspace Contents
+        run: |
+          ls -l ${{ github.workspace }}
+          ls -l ${{ github.workspace }}/_site
+
       - name: Prepare for Deployment
         working-directory: ${{ github.workspace }}  # Set working directory to the repository root
         run: |
