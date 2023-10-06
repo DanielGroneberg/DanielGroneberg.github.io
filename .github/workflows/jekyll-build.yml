@@ -47,8 +47,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Prepare for Deployment
-        working-directory: ./_site  # Specify the working directory
+        working-directory: ${{ github.workspace }}  # Set working directory to the repository root
         run: |
+          cd _site
+  
           git init
   
           git config user.name "GitHub Actions"
