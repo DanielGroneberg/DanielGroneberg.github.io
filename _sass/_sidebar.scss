@@ -54,9 +54,10 @@
 
   @include breakpoint($large) {
     position: absolute;
-    left: 0; /* Push the sidebar all the way to the left */
-    bottom: 0; /* Push the sidebar down to the bottom of the page */
+    left: 0;
+    bottom: 0;
     width: $right-sidebar-width-narrow;
+    margin-left: 0; /* Remove margin-left */
     z-index: 10;
   }
 
@@ -64,7 +65,6 @@
     width: $right-sidebar-width;
   }
 }
-
 
 /*
    Author profile and links
