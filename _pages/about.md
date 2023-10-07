@@ -36,4 +36,4 @@ Best performing model was a stacking classifier model using logistic regressor a
 <div id="resume"></div>
 <!-- {#resume} -->
 &nbsp;
-<object data="{{ site.url }}{{ site.baseurl }}/files/daniel_groneberg_dsi_resume_template.pdf" width="1000" height="1000" type="application/pdf"></object>
+<object data="{{ site.url }}{{ site.baseurl }}/files/daniel_groneberg_dsi_resume_template.pdf" width="900" height="900" type="application/pdf"></object>
