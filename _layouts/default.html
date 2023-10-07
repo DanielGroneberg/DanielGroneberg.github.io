@@ -6,10 +6,10 @@
   <style>
     /* Custom CSS for Navigation Buttons */
     #scroll-buttons {
-      background-color: #333;
+      background-color: transparent; /* Make the bar's background invisible */
       padding: 10px;
       position: fixed;
-      top: 0;
+      top: 40px; /* Shift the bar down slightly */
       width: 100%;
       z-index: 1000;
     }
@@ -17,7 +17,7 @@
     #scroll-buttons ul {
       list-style-type: none;
       display: flex;
-      justify-content: space-around; /* Spread buttons evenly */
+      justify-content: space-around; /* Reduce the distance between the buttons */
       margin: 0;
       padding: 0;
     }
@@ -28,9 +28,15 @@
 
     /* Style for the buttons */
     #scroll-buttons a {
-      color: #fff; /* White color */
-      font-size: 16px; /* Medium size font */
+      color: #333; /* Dark grey text color */
+      font-size: 18px; /* Increase the text size */
       text-decoration: none;
+      font-weight: normal; /* Remove bold style from all buttons */
+    }
+
+    /* Style for the first button */
+    #scroll-buttons a:first-child {
+      font-weight: bold; /* Make the first button boldface */
     }
   </style>
 </head>
