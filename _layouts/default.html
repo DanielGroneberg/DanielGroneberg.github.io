@@ -36,9 +36,9 @@
   <div id="scroll-buttons">
     <nav>
       <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Data Science Projects</a></li>
-        <li><a href="#resume">View Resume</a></li>
+        <li><a href="#about-marker">About Me</a></li>
+        <li><a href="#projects-marker">Data Science Projects</a></li>
+        <li><a href="#resume-marker">View Resume</a></li>
       </ul>
     </nav>
   </div>
@@ -50,7 +50,7 @@
   <script>
     // Function to scroll to the about section on page load
     window.addEventListener('load', function() {
-      const targetId = 'about'; // Change to match your anchor id
+      const targetId = 'about-marker'; // Change to match your anchor id
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({
