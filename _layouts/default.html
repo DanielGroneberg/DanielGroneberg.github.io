@@ -67,10 +67,16 @@
           if (targetElement) {
             const headerHeight = 50; // Adjust this value based on your header's height
             const scrollPosition = targetElement.offsetTop - headerHeight;
-            window.scrollTo({
-              top: scrollPosition,
-              behavior: 'smooth'
-            });
+            
+            // Use requestAnimationFrame for smoother scrolling
+            function scroll() {
+              if (window.scrollY < scrollPosition) {
+                window.scrollBy(0, 10);
+                requestAnimationFrame(scroll);
+              }
+            }
+            
+            requestAnimationFrame(scroll);
           }
         }
       });
