@@ -9,8 +9,9 @@
       background-color: transparent; /* Make the bar's background invisible */
       padding: 10px;
       position: fixed;
-      top: 40px; /* Shift the bar down slightly */
-      width: 100%;
+      top: 20%; /* Shift the buttons up to be halfway between where they are now and when we started */
+      width: 70%; /* Keep the buttons within the middle 70% of the screen */
+      left: 15%; /* Center the buttons horizontally within the 70% width */
       z-index: 1000;
     }
 
@@ -38,6 +39,12 @@
     #scroll-buttons a:first-child {
       font-weight: bold; /* Make the first button boldface */
       font-size: 28px; /* Increase the font size for "About Me" */
+    }
+
+    /* Style for "Data Science Projects" and "View Resume" buttons */
+    #scroll-buttons a:nth-child(2),
+    #scroll-buttons a:nth-child(3) {
+      font-size: 18px; /* Make "Data Science Projects" and "View Resume" 50% smaller */
     }
   </style>
 </head>
@@ -106,14 +113,4 @@
     });
   </script>
 
-  <div class="page__footer">
-    <footer>
-      {% include footer/custom.html %}
-      {% include footer.html %}
-    </footer>
-  </div>
-
-  {% include scripts.html %}
-
-</body>
-</html>
+  <div class
