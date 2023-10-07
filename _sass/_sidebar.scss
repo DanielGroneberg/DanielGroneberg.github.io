@@ -60,6 +60,9 @@
     width: $right-sidebar-width-narrow;
     margin-left: span(0.5 of 12);
     z-index: 10;
+
+    /* Adjust the margin-top value to push the sidebar down */
+    margin-top: 100px; /* Adjust this value as needed */
   }
 
   @include breakpoint($x-large) {
