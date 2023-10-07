@@ -7,8 +7,8 @@
    ========================================================================== */
 
 .sidebar {
-  -webkit-transform: translate3d(0, 0 , 0);
-          transform: translate3d(0, 0 , 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 
   @include clearfix();
   margin-bottom: 1em;
@@ -17,13 +17,15 @@
     @include span(2 of 12);
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
-            transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 
     &:hover {
       opacity: 1;
     }
   }
 
+  /* Adjust the margin-top value to push the sidebar down */
+  margin-top: 100px; /* Adjust this value as needed */
 
   @include breakpoint($x-large) {
     padding-right: 0;
