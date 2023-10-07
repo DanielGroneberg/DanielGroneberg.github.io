@@ -53,13 +53,12 @@
   margin-bottom: 1em;
 
   @include breakpoint($large) {
-    position: relative;
-    float: right;
+    position: absolute;
+    left: 0; /* Push the sidebar all the way to the left */
     width: $right-sidebar-width-narrow;
-    margin-left: span(0.5 of 12);
     z-index: 10;
 
-    /* Adjust the margin-top value to push the sidebar down */
+    /* Adjust the margin-top value to control the vertical position */
     margin-top: 100px; /* Adjust this value as needed */
   }
 
