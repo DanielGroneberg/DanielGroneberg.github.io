@@ -52,37 +52,52 @@
   {{ content }} <!-- Include the content from the Markdown files here -->
 
   <!-- Smooth Scrolling JavaScript -->
-  <script>
-    // Function to scroll to the target section
-    function scrollToTarget(targetId) {
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        const offset = 20; // Adjust the offset as needed
-        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
+<script>
+  // Function to scroll to the top of the page
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
 
-        // Update the URL without a page reload
-        window.history.pushState({}, '', `#${targetId}`);
-      }
+    // Update the URL without a page reload
+    window.history.pushState({}, '', '/');
+  }
+
+  // Function to scroll to the target section
+  function scrollToTarget(targetId) {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const offset = 20; // Adjust the offset as needed
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+
+      // Update the URL without a page reload
+      window.history.pushState({}, '', `#${targetId}`);
     }
+  }
 
-    // Function to handle click events on navigation links
-    function handleNavLinkClick(event, targetId) {
-      event.preventDefault();
+  // Function to handle click events on navigation links
+  function handleNavLinkClick(event, targetId) {
+    event.preventDefault();
+    if (targetId === 'top') {
+      scrollToTop(); // Scroll to the top if targetId is 'top'
+    } else {
       scrollToTarget(targetId);
     }
+  }
 
-    // Add click event listeners to the navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href').substring(1);
-        handleNavLinkClick(e, targetId);
-      });
+  // Add click event listeners to the navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').substring(1);
+      handleNavLinkClick(e, targetId);
     });
-  </script>
+  });
+</script>
 
   <div class="page__footer">
     <footer>
