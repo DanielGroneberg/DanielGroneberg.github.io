@@ -17,15 +17,6 @@
     </nav>
   </div>
 
-  <!-- Navigation Menu -->
-  <nav>
-    <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li> 
-      <li><a href="#resume">View Resume</a></li>
-    </ul>
-  </nav>
-
   <!-- Content Sections -->
   {{ content }} <!-- Include the content from the Markdown files here -->
 
@@ -43,6 +34,9 @@
             top: scrollPosition,
             behavior: 'smooth'
           });
+
+          // Update the URL without a page reload
+          window.history.pushState({}, '', `#${targetId}`);
         }
       });
     });
