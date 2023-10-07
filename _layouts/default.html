@@ -6,13 +6,14 @@
   <style>
   /* Custom CSS for Navigation Buttons */
 #scroll-buttons {
-  background-color: transparent; /* Make the bar's background invisible */
+  background-color: #fff; /* White background for the bar */
   padding: 10px;
   position: fixed;
-  top: 2%;
+  top: 0; /* Extend the bar to the top of the page */
+  width: 70%; /* Limit the bar to the inner 70% of the page */
+  left: 15%; /* Center the buttons horizontally within the 70% width */
+  transform: translateX(-50%); /* Adjust to center the buttons */
   z-index: 1000;
-  width: 100%; /* Make the bar full-width */
-  text-align: center; /* Center the buttons horizontally */
 }
 
 #scroll-buttons ul {
@@ -27,7 +28,7 @@
 }
 
 #scroll-buttons li {
-  margin: 0 100;
+  margin: 0 75;
 }
 
 /* Style for the buttons */
