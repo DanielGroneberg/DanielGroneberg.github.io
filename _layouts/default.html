@@ -3,67 +3,19 @@
 <head>
   {% include head.html %}
   {% include head/custom.html %}
-</head>
-<body>
-
-  <!-- Navigation Buttons Container -->
-  <div id="scroll-buttons">
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">View Resume</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <!-- Navigation Menu -->
-  <nav style="visibility: hidden;">
-    <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#resume">View Resume</a></li>
-    </ul>
-  </nav>
-
-  <!-- Content Sections -->
-  {{ content }} <!-- Include the content from the Markdown files here -->
-
-  <!-- Smooth Scrolling JavaScript -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          const headerHeight = 50; // Adjust this value based on your header's height
-          const scrollPosition = targetElement.offsetTop - headerHeight;
-          window.scrollTo({
-            top: scrollPosition,
-            behavior: 'smooth'
-          });
-
-          // Update the URL without a page reload
-          window.history.pushState({}, '', `#${targetId}`);
-        }
-      });
-    });
-  </script>
-
-  <!-- Custom CSS for Navigation Buttons -->
   <style>
-    /* Add your styling rules here */
+    /* Custom CSS for Navigation Buttons */
     #scroll-buttons {
+      /* Add your styling rules here */
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: #333;
       padding: 10px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      position: fixed; /* Add this line to fix the position */
+      top: 0; /* Add this line to position it at the top of the screen */
+      width: 100%; /* Add this line to make it full-width */
+      z-index: 1000; /* Add this line to ensure it appears above other content */
     }
 
     #scroll-buttons ul {
@@ -77,5 +29,48 @@
       margin: 0;
     }
   </style>
+</head>
+<body>
+
+  <!-- Navigation Buttons Container -->
+  <div id="scroll-buttons">
+    <nav>
+      <ul>
+        <li><a href="#resume">View Resume</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li> <!-- Add this line for the Projects section -->
+        <!-- Add more links for other sections as needed -->
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Content Sections -->
+  {{ content }} <!-- Include the content from the Markdown files here -->
+
+  <!-- Smooth Scrolling JavaScript -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+  <div class="page__footer">
+    <footer>
+      {% include footer/custom.html %}
+      {% include footer.html %}
+    </footer>
+  </div>
+
+  {% include scripts.html %}
+
 </body>
 </html>
