@@ -1,93 +1,32 @@
-<!DOCTYPE html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-<head>
-  {% include head.html %}
-  {% include head/custom.html %}
-  <style>
-    /* Custom CSS for Navigation Buttons */
-    #scroll-buttons {
-      /* Add your styling rules here */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #333;
-      padding: 10px;
-      position: fixed; /* Add this line to fix the position */
-      top: 0; /* Add this line to position it at the top of the screen */
-      width: 100%; /* Add this line to make it full-width */
-      z-index: 1000; /* Add this line to ensure it appears above other content */
-    }
-
-    #scroll-buttons ul {
-      list-style-type: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    #scroll-buttons li {
-      /* Add styling for individual buttons here */
-      margin: 0;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation Buttons Container -->
-  <div id="scroll-buttons">
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Data Science Projects</a></li>
-        <li><a href="#resume">View Resume</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <!-- Content Sections -->
-  {{ content }} <!-- Include the content from the Markdown files here -->
-
-  <!-- Smooth Scrolling JavaScript -->
-  <script>
-    // Function to scroll to the about section on page load
-    window.addEventListener('load', function() {
-      const targetId = 'about-marker'; // Change to match your anchor id
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          // Offset the scroll position by 20 pixels (adjust as needed)
-          const offset = 20;
-          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({
-            top: targetPosition - offset,
-            behavior: 'smooth'
-          });
-
-          // Update the URL without a page reload
-          window.history.pushState({}, '', `#${targetId}`);
-        }
+<!-- Smooth Scrolling JavaScript -->
+<script>
+  // Function to scroll to the target section
+  function scrollToTarget(targetId) {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const offset = 20; // Adjust the offset as needed
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
       });
+
+      // Update the URL without a page reload
+      window.history.pushState({}, '', `#${targetId}`);
+    }
+  }
+
+  // Function to handle click events on navigation links
+  function handleNavLinkClick(event, targetId) {
+    event.preventDefault();
+    scrollToTarget(targetId);
+  }
+
+  // Add click event listeners to the navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').substring(1);
+      handleNavLinkClick(e, targetId);
     });
-  </script>
-
-  <div class="page__footer">
-    <footer>
-      {% include footer/custom.html %}
-      {% include footer.html %}
-    </footer>
-  </div>
-
-  {% include scripts.html %}
-
-</body>
-</html>
+  });
+</script>
