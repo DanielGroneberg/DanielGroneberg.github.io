@@ -3,6 +3,48 @@
 <head>
   {% include head.html %}
   {% include head/custom.html %}
+  <style>
+    /* Custom CSS for Navigation Buttons */
+    #scroll-buttons {
+      /* Add your styling rules here */
+      display: flex;
+      justify-content: space-between; /* Spread buttons across the width */
+      align-items: center;
+      background-color: #333;
+      padding: 10px;
+      position: fixed; /* Add this line to fix the position */
+      top: 0; /* Add this line to position it at the top of the screen */
+      width: 100%; /* Add this line to make it full-width */
+      z-index: 1000; /* Add this line to ensure it appears above other content */
+    }
+
+    #scroll-buttons ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+      margin: 0; /* Remove default margin */
+    }
+
+    #scroll-buttons li {
+      /* Add styling for individual buttons here */
+      margin: 0;
+    }
+
+    /* Style for the "About Me" button */
+    #scroll-buttons a[href="#top"] {
+      font-weight: bold;
+      color: #333; /* Dark grey color */
+      font-size: 16px; /* Medium size font */
+    }
+
+    /* Style for the other buttons */
+    #scroll-buttons a {
+      font-weight: normal; /* Not bold */
+      color: #333; /* Dark grey color */
+      font-size: 16px; /* Medium size font */
+      text-decoration: none; /* Remove underline */
+    }
+  </style>
 </head>
 <body>
 
