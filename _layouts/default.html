@@ -5,7 +5,8 @@
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
       const offset = 20; // Adjust the offset as needed
-      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+      const headerHeight = 80; // Adjust the header height
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - offset;
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
