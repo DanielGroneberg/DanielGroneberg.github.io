@@ -36,9 +36,9 @@
   <div id="scroll-buttons">
     <nav>
       <ul>
-        <li><a href="#about-marker">About Me</a></li>
-        <li><a href="#projects-marker">Data Science Projects</a></li>
-        <li><a href="#resume-marker">View Resume</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Data Science Projects</a></li>
+        <li><a href="#resume">View Resume</a></li>
       </ul>
     </nav>
   </div>
@@ -65,7 +65,11 @@
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-          targetElement.scrollIntoView({
+          // Offset the scroll position by 20 pixels (adjust as needed)
+          const offset = 20;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: targetPosition - offset,
             behavior: 'smooth'
           });
 
