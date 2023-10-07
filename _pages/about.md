@@ -7,15 +7,14 @@ redirect_from:
   - /about.html
   - /about/
 ---
-
 <div id="about-marker"></div>
 <!-- {#about} -->
 
 ## About Me
 My introduction to the data science process was as an undergraduate at Western Washington University where I modeled hillslope safety, precipitation estimates and river channel geometry using ArcGIS and Python. I also learned how to merge and modify dataframes and manage geodatabases. In a customer-facing role as a Geotechnical Field Technician with Earth Solutions, NW, I assisted construction site contractors in meeting targets by providing immediate feedback and recommendations based on data I collected onsite in order to achieve 95% soil compaction targets. In this role, I drafted daily technical reports summarizing my findings, mapping my data, and presenting it in spreadsheet format. This enabled me to serve as an intermediary between offsite technical experts and the client. I graduated from the General Assembly Data Science program, where I used Python for data analysis and modeling.
-
 <div id="projects-marker"></div>
 <!-- {#projects} -->
+
 
 ## Data Science Projects
 ### [Timeseries Forecast of Soil Moisture](https://github.com/DanielGroneberg/Climate_Group_Project) | Python: netCDF4, statsmodels, sktime, sklearn 
@@ -37,9 +36,9 @@ Developed a timeseries forecast for key economic metrics including Federal Reser
 Developed a subreddit classification model using 7,155 posts scraped from r/Jobs and r/AntiWork. Examined how sentiment varied between the two subreddits when certain words like "manager" or "interview" were found in a post. Token vectorized the text data and experimented with logistic regression, kNN, random forest, and gradient-boosted models.
 
 Best performing model was a stacking classifier model using logistic regressor and random forest classifier as the base estimators with a gradient-boosting classifier as the final estimator, which achieved a classification accuracy score of .85.
-
 <div id="resume-marker"></div>
 <!-- {#resume} -->
+
 
 ## View Resume
 <object data="{{ site.url }}{{ site.baseurl }}/files/daniel_groneberg_dsi_resume_template.pdf" width="1000" height="1000" type="application/pdf"></object>
