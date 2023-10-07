@@ -5,47 +5,48 @@
   {% include head/custom.html %}
   <style>
     /* Custom CSS for Navigation Buttons */
-    #scroll-buttons {
-      background-color: transparent; /* Make the bar's background invisible */
-      padding: 10px;
-      position: fixed;
-      top: 2%;
-      z-index: 1000;
-      text-align: center; /* Center the buttons horizontally */
-      width: 100%; /* Make the bar full-width */
-    }
-    
-    #scroll-buttons ul {
-      list-style-type: none;
-      display: inline-block; /* Display buttons as inline-block to make the background only cover the button's width */
-      margin: 0;
-      padding: 0;
-    }
-    
-    #scroll-buttons li {
-      margin: 0 100px; /* Add margin to create spacing between buttons */
-    }
+#scroll-buttons {
+  background-color: transparent; /* Make the bar's background invisible */
+  padding: 10px;
+  position: fixed;
+  top: 2%;
+  z-index: 1000;
+  width: 100%; /* Make the bar full-width */
+  text-align: center; /* Center the buttons horizontally */
+}
 
-    /* Style for the buttons */
-    #scroll-buttons a {
-      color: #555; /* Medium gray text color */
-      font-size: 24px; /* Increase the text size by 50% */
-      text-decoration: none;
-      font-weight: normal; /* Remove bold style from all buttons */
-      white-space: nowrap; /* Prevent text from wrapping */
-    }
+#scroll-buttons ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around; /* Spread buttons evenly */
+  margin: 0;
+  padding: 0;
+}
 
-    /* Style for the "About Me" button */
-    #scroll-buttons a:first-child {
-      font-weight: bold; /* Make the first button boldface */
-      font-size: 28px; /* Increase the font size for "About Me" */
-    }
+#scroll-buttons li {
+  margin: 0;
+}
 
-    /* Style for "Data Science Projects" and "View Resume" buttons */
-    #scroll-buttons a:nth-child(2),
-    #scroll-buttons a:nth-child(3) {
-      font-size: 18px; /* Make "Data Science Projects" and "View Resume" 50% smaller */
-    }
+/* Style for the buttons */
+#scroll-buttons a {
+  color: #555; /* Medium gray text color */
+  font-size: 24px; /* Increase the text size by 50% */
+  text-decoration: none;
+  font-weight: normal; /* Remove bold style from all buttons */
+}
+
+/* Style for the "About Me" button */
+#scroll-buttons a:first-child {
+  font-weight: bold; /* Make the first button boldface */
+  font-size: 28px; /* Increase the font size for "About Me" */
+}
+
+/* Style for "Data Science Projects" and "View Resume" buttons */
+#scroll-buttons a:nth-child(2),
+#scroll-buttons a:nth-child(3) {
+  font-size: 18px; /* Make "Data Science Projects" and "View Resume" 50% smaller */
+}
+
   </style>
 </head>
 <body>
