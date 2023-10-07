@@ -36,10 +36,9 @@
   <div id="scroll-buttons">
     <nav>
       <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#resume">View Resume</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li> <!-- Add this line for the Projects section -->
-        <!-- Add more links for other sections as needed -->
       </ul>
     </nav>
   </div>
@@ -58,6 +57,9 @@
           targetElement.scrollIntoView({
             behavior: 'smooth'
           });
+
+          // Update the URL without a page reload
+          window.history.pushState({}, '', `#${targetId}`);
         }
       });
     });
