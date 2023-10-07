@@ -55,17 +55,16 @@
   @include breakpoint($large) {
     position: absolute;
     left: 0; /* Push the sidebar all the way to the left */
+    bottom: 0; /* Push the sidebar down to the bottom of the page */
     width: $right-sidebar-width-narrow;
     z-index: 10;
-
-    /* Adjust the margin-top value to control the vertical position */
-    margin-top: 100px; /* Adjust this value as needed */
   }
 
   @include breakpoint($x-large) {
     width: $right-sidebar-width;
   }
 }
+
 
 /*
    Author profile and links
