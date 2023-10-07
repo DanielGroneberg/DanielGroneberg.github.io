@@ -6,12 +6,13 @@
   <style>
     /* Custom CSS for Navigation Buttons */
      #scroll-buttons {
-      background-color: transparent; /* Make the bar's background invisible */
+      background-color: #fff; /* White background for the bar */
       padding: 10px;
       position: fixed;
-      top: 2%; /* Adjust this value to push the buttons up */
-      width: 65%; /* Keep the buttons within the middle 70% of the screen */
-      left: 18%; /* Center the buttons horizontally within the 70% width */
+      top: 2%;
+      width: auto; /* Remove fixed width */
+      left: 50%; /* Center the buttons horizontally */
+      transform: translateX(-50%); /* Adjust to center the buttons */
       z-index: 1000;
     }
 
@@ -113,4 +114,14 @@
     });
   </script>
 
-  <div class
+  <div class="page__footer">
+    <footer>
+      {% include footer/custom.html %}
+      {% include footer.html %}
+    </footer>
+  </div>
+
+  {% include scripts.html %}
+
+</body>
+</html>
