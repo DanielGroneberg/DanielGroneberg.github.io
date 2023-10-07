@@ -5,25 +5,23 @@
   {% include head/custom.html %}
   <style>
     /* Custom CSS for Navigation Buttons */
-     #scroll-buttons {
-      background-color: #fff; /* White background for the bar */
+    #scroll-buttons {
+      background-color: transparent; /* Make the bar's background invisible */
       padding: 10px;
       position: fixed;
       top: 2%;
-      width: auto; /* Remove fixed width */
-      left: 50%; /* Center the buttons horizontally */
-      transform: translateX(-50%); /* Adjust to center the buttons */
       z-index: 1000;
+      text-align: center; /* Center the buttons horizontally */
+      width: 100%; /* Make the bar full-width */
     }
-
+    
     #scroll-buttons ul {
       list-style-type: none;
-      display: flex;
-      justify-content: space-around; /* Spread buttons evenly */
+      display: inline-block; /* Display buttons as inline-block to make the background only cover the button's width */
       margin: 0;
       padding: 0;
     }
-
+    
     #scroll-buttons li {
       margin: 0 100px; /* Add margin to create spacing between buttons */
     }
