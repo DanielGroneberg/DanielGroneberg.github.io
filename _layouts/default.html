@@ -51,10 +51,20 @@
   font-size: 18px; /* Make "Data Science Projects" and "View Resume" 50% smaller */
 }
 
-/* Set the background color of the body to FCF2DF */
+/* Light mode styles (default) */
 body {
-  background-color: #FFF;
+  background-color: #fff;
+  color: #333;
 }
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333;
+    color: #fff;
+  }
+}
+
   </style>
 </head>
 <body>
