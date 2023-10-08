@@ -4,70 +4,56 @@
   {% include head.html %}
   {% include head/custom.html %}
   <style>
-    /* Custom CSS for Navigation Buttons */
-    #scroll-buttons {
-      background-color: #FFF;
-      padding: 10px;
-      position: fixed;
-      top: 0; /* Extend the bar to the top of the page */
-      width: 70%; /* Limit the bar to the inner 70% of the page */
-      left: 52%; /* Center the buttons horizontally */
-      transform: translateX(-50%); /* Adjust to center the buttons */
-      z-index: 1000;
-      display: none; /* Hide the buttons by default on mobile */
-    }
+  /* Custom CSS for Navigation Buttons */
+#scroll-buttons {
+  background-color: #FFF;
+  padding: 10px;
+  position: fixed;
+  top: 0; /* Extend the bar to the top of the page */
+  width: 70%; /* Limit the bar to the inner 70% of the page */
+  left: 52%; /* Center the buttons horizontally */
+  transform: translateX(-50%); /* Adjust to center the buttons */
+  z-index: 1000;
+}
 
-    #scroll-buttons ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: space-around; /* Spread buttons evenly */
-      margin: 0;
-      padding: 0;
-      background-color: #FFF;
-      border-radius: 5px; /* Add border-radius for rounded corners */
-      padding: 5px; /* Add padding around the buttons */
-    }
+#scroll-buttons ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around; /* Spread buttons evenly */
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  border-radius: 5px; /* Add border-radius for rounded corners */
+  padding: 5px; /* Add padding around the buttons */
+}
 
-    #scroll-buttons li {
-      margin: 0 100;
-    }
+#scroll-buttons li {
+  margin: 0 100;
+}
 
-    /* Style for the buttons */
-    #scroll-buttons a {
-      color: #555;
-      font-size: 24px; /* Increase the text size by 50% */
-      text-decoration: none;
-      font-weight: normal; /* Remove bold style from all buttons */
-    }
+/* Style for the buttons */
+#scroll-buttons a {
+  color: #555;
+  font-size: 24px; /* Increase the text size by 50% */
+  text-decoration: none;
+  font-weight: normal; /* Remove bold style from all buttons */
+}
 
-    /* Style for the "About Me" button */
-    #scroll-buttons a:first-child {
-      font-weight: bold; /* Make the first button boldface */
-      font-size: 28px; /* Increase the font size for "About Me" */
-    }
+/* Style for the "About Me" button */
+#scroll-buttons a:first-child {
+  font-weight: bold; /* Make the first button boldface */
+  font-size: 28px; /* Increase the font size for "About Me" */
+}
 
-    /* Style for "Data Science Projects" and "View Resume" buttons */
-    #scroll-buttons a:nth-child(2),
-    #scroll-buttons a:nth-child(3) {
-      font-size: 18px; /* Make "Data Science Projects" and "View Resume" 50% smaller */
-    }
+/* Style for "Data Science Projects" and "View Resume" buttons */
+#scroll-buttons a:nth-child(2),
+#scroll-buttons a:nth-child(3) {
+  font-size: 18px; /* Make "Data Science Projects" and "View Resume" 50% smaller */
+}
 
-    body {
-      background-color: #FFF;
-    }
-
-    /* Custom CSS for Mobile */
-    @media (max-width: 768px) {
-      #scroll-buttons {
-        display: none; /* Hide the buttons on mobile */
-      }
-
-      /* Reduce the font size of the resume on mobile */
-      .resume {
-        font-size: 14px;
-        /* Add any other mobile-specific styling here */
-      }
-    }
+body {
+  background-color: #FFF;
+}
   </style>
 </head>
 <body>
@@ -88,11 +74,50 @@
 
   <!-- Smooth Scrolling JavaScript -->
   <script>
-    // JavaScript code for smooth scrolling and mobile button handling
-    // ...
+    // Function to scroll to the top of the page
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
 
-    // JavaScript for toggling the mobile menu
-    // ...
+      // Update the URL without a page reload
+      window.history.pushState({}, '', '/');
+    }
+
+    // Function to scroll to the target section
+    function scrollToTarget(targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const offset = 20; // Adjust the offset as needed
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        // Update the URL without a page reload
+        window.history.pushState({}, '', `#${targetId}`);
+      }
+    }
+
+    // Function to handle click events on navigation links
+    function handleNavLinkClick(event, targetId) {
+      event.preventDefault();
+      if (targetId === 'top') {
+        scrollToTop(); // Scroll to the top if targetId is 'top'
+      } else {
+        scrollToTarget(targetId);
+      }
+    }
+
+    // Add click event listeners to the navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').substring(1);
+        handleNavLinkClick(e, targetId);
+      });
+    });
   </script>
 
   <div class="page__footer">
