@@ -4,39 +4,70 @@
   {% include head.html %}
   {% include head/custom.html %}
   <style>
-    /* Define CSS custom properties for colors */
-    :root {
-      --background-light: #FCF2DF; /* Light mode background color */
-      --background-dark: #000000; /* Dark mode background color */
-      --text-light: #000000; /* Light mode text color */
-      --text-dark: #FFFFFF; /* Dark mode text color */
-    }
+  /* Custom CSS for Navigation Buttons */
+#scroll-buttons {
+  background-color: #FFF;
+  padding: 10px;
+  position: fixed;
+  top: 0; /* Extend the bar to the top of the page */
+  width: 70%; /* Limit the bar to the inner 70% of the page */
+  left: 52%; /* Center the buttons horizontally */
+  transform: translateX(-50%); /* Adjust to center the buttons */
+  z-index: 1000;
+}
 
-    /* Set background color and text color based on mode */
-    body {
-      background-color: var(--background-light); /* Light mode background color */
-      color: var(--text-light); /* Light mode text color */
-    }
+#scroll-buttons ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around; /* Spread buttons evenly */
+  margin: 0;
+  padding: 0;
+  background-color: #FCF2DF; /* Set the background color to FCF2DF */
+  border-radius: 5px; /* Add border-radius for rounded corners */
+  padding: 5px; /* Add padding around the buttons */
+}
 
-    /* Other CSS styles for your site */
-    /* ... */
+#scroll-buttons li {
+  margin: 0 100;
+}
 
-    /* Style for dark mode */
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: var(--background-dark); /* Dark mode background color */
-        color: var(--text-dark); /* Dark mode text color */
-      }
-    }
+/* Style for the buttons */
+#scroll-buttons a {
+  color: #000000;
+  font-size: 24px; /* Increase the text size by 50% */
+  text-decoration: none;
+  font-weight: normal; /* Remove bold style from all buttons */
+}
 
-    /* Rest of your CSS styles */
-    /* ... */
+/* Style for the "About Me" button */
+#scroll-buttons a:first-child {
+  font-weight: bold; /* Make the first button boldface */
+  font-size: 28px; /* Increase the font size for "About Me" */
+}
+
+/* Style for "Data Science Projects" and "View Resume" buttons */
+#scroll-buttons a:nth-child(2),
+#scroll-buttons a:nth-child(3) {
+  font-size: 18px; /* Make "Data Science Projects" and "View Resume" 50% smaller */
+}
+
+/* Set the background color of the body to FCF2DF */
+body {
+  background-color: #FFF;
+}
   </style>
 </head>
 <body>
   <!-- Navigation Buttons Container -->
   <div id="scroll-buttons">
-    <!-- ... -->
+    <nav>
+      <ul>
+        <!-- Change the href attribute to #top -->
+        <li><a href="#top">About Me</a></li>
+        <li><a href="#projects">Data Science Projects</a></li>
+        <li><a href="#resume">View Resume</a></li>
+      </ul>
+    </nav>
   </div>
 
   <!-- Content Sections -->
@@ -44,23 +75,60 @@
 
   <!-- Smooth Scrolling JavaScript -->
   <script>
-    // Check if dark mode is preferred
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Function to scroll to the top of the page
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
 
-    // Toggle CSS custom properties based on mode preference
-    const root = document.documentElement; // Get the root element
-
-    if (prefersDarkMode) {
-      root.style.setProperty('--background-light', '#000000'); // Change light mode background color to dark
-      root.style.setProperty('--text-light', '#FFFFFF'); // Change light mode text color to white
+      // Update the URL without a page reload
+      window.history.pushState({}, '', '/');
     }
-    // ... Rest of your JavaScript code ...
+
+    // Function to scroll to the target section
+    function scrollToTarget(targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const offset = 20; // Adjust the offset as needed
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        // Update the URL without a page reload
+        window.history.pushState({}, '', `#${targetId}`);
+      }
+    }
+
+    // Function to handle click events on navigation links
+    function handleNavLinkClick(event, targetId) {
+      event.preventDefault();
+      if (targetId === 'top') {
+        scrollToTop(); // Scroll to the top if targetId is 'top'
+      } else {
+        scrollToTarget(targetId);
+      }
+    }
+
+    // Add click event listeners to the navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').substring(1);
+        handleNavLinkClick(e, targetId);
+      });
+    });
   </script>
 
   <div class="page__footer">
-    <!-- ... -->
+    <footer>
+      {% include footer/custom.html %}
+      {% include footer.html %}
+    </footer>
   </div>
 
   {% include scripts.html %}
+
 </body>
 </html>
