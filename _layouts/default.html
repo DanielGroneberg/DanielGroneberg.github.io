@@ -1,134 +1,78 @@
-<!DOCTYPE html>
+---
+layout: compress
+---
+
+{% include base_path %}
+
+<!doctype html>
 <html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-<head>
-  {% include head.html %}
-  {% include head/custom.html %}
-  <style>
-  /* Custom CSS for Navigation Buttons */
-#scroll-buttons {
-  background-color: #FFF;
-  padding: 10px;
-  position: fixed;
-  top: 0; /* Extend the bar to the top of the page */
-  width: 70%; /* Limit the bar to the inner 70% of the page */
-  left: 52%; /* Center the buttons horizontally */
-  transform: translateX(-50%); /* Adjust to center the buttons */
-  z-index: 1000;
-}
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    <!-- Add a viewport meta tag for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* Adjustments for the mobile version */
+      @media (max-width: 768px) {
+        .resume {
+          font-size: 14px;
+          /* Add any other mobile-specific styling here */
+        }
+        #scroll-buttons {
+          display: none;
+        }
+        /* Add styles for the mobile menu here */
+        .mobile-menu {
+          text-align: center;
+        }
+        .menu-button {
+          /* Style your mobile menu button here (e.g., hamburger icon) */
+          cursor: pointer;
+        }
+        .menu-items {
+          display: none;
+        }
+        .menu-items ul {
+          list-style-type: none;
+          padding: 0;
+        }
+        .menu-items ul li {
+          margin: 10px 0;
+        }
+        .menu-items ul li a {
+          text-decoration: none;
+          color: #333;
+          /* Add styling for menu items here */
+        }
+      }
+    </style>
+  </head>
 
-#scroll-buttons ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-around; /* Spread buttons evenly */
-  margin: 0;
-  padding: 0;
-  background-color: #FFF;
-  border-radius: 5px; /* Add border-radius for rounded corners */
-  padding: 5px; /* Add padding around the buttons */
-}
+  <body>
 
-#scroll-buttons li {
-  margin: 0 100;
-}
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
 
-/* Style for the buttons */
-#scroll-buttons a {
-  color: #555;
-  font-size: 24px; /* Increase the text size by 50% */
-  text-decoration: none;
-  font-weight: normal; /* Remove bold style from all buttons */
-}
+    {{ content }}
 
-/* Style for the "About Me" button */
-#scroll-buttons a:first-child {
-  font-weight: bold; /* Make the first button boldface */
-  font-size: 28px; /* Increase the font size for "About Me" */
-}
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
 
-/* Style for "Data Science Projects" and "View Resume" buttons */
-#scroll-buttons a:nth-child(2),
-#scroll-buttons a:nth-child(3) {
-  font-size: 18px; /* Make "Data Science Projects" and "View Resume" 50% smaller */
-}
+    <script>
+      // JavaScript for toggling the mobile menu
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.querySelector('.menu-button');
+        const menuItems = document.querySelector('.menu-items');
 
-/* Set the background color of the body to FCF2DF */
-body {
-  background-color: #FFF;
-}
-  </style>
-</head>
-<body>
-  <!-- Navigation Buttons Container -->
-  <div id="scroll-buttons">
-    <nav>
-      <ul>
-        <!-- Change the href attribute to #top -->
-        <li><a href="#top">About Me</a></li>
-        <li><a href="#projects">Data Science Projects</a></li>
-        <li><a href="#resume">View Resume</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <!-- Content Sections -->
-  {{ content }}
-
-  <!-- Smooth Scrolling JavaScript -->
-  <script>
-    // Function to scroll to the top of the page
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-
-      // Update the URL without a page reload
-      window.history.pushState({}, '', '/');
-    }
-
-    // Function to scroll to the target section
-    function scrollToTarget(targetId) {
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        const offset = 20; // Adjust the offset as needed
-        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
+        menuButton.addEventListener('click', function() {
+          menuItems.style.display = menuItems.style.display === 'block' ? 'none' : 'block';
         });
-
-        // Update the URL without a page reload
-        window.history.pushState({}, '', `#${targetId}`);
-      }
-    }
-
-    // Function to handle click events on navigation links
-    function handleNavLinkClick(event, targetId) {
-      event.preventDefault();
-      if (targetId === 'top') {
-        scrollToTop(); // Scroll to the top if targetId is 'top'
-      } else {
-        scrollToTarget(targetId);
-      }
-    }
-
-    // Add click event listeners to the navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href').substring(1);
-        handleNavLinkClick(e, targetId);
       });
-    });
-  </script>
+    </script>
 
-  <div class="page__footer">
-    <footer>
-      {% include footer/custom.html %}
-      {% include footer.html %}
-    </footer>
-  </div>
-
-  {% include scripts.html %}
-
-</body>
+  </body>
 </html>
