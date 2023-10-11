@@ -40,20 +40,9 @@
     }
 
     /* Style for the "About Me" button initially underlined */
-    #scroll-buttons a:first-child.active {
-      text-decoration: underline;
+    #scroll-buttons a:first-child {
       font-weight: bold;
-    }
-
-    /* Style for "Data Science Projects" and "View Resume" buttons when active */
-    #scroll-buttons a:nth-child(2).active,
-    #scroll-buttons a:nth-child(3).active {
-      text-decoration: underline;
-      font-weight: normal; /* You can modify font weight as needed */
-    }
-
-    body {
-      background-color: #FFF;
+      font-size: 28px;
     }
 
     /* Add underlines for active buttons */
@@ -68,9 +57,9 @@
     <nav>
       <ul>
         <!-- Change the href attribute to #top -->
-        <li><a href="#top" class="active">About Me</a></li>
-        <li><a href="#projects" class="active">Data Science Projects</a></li>
-        <li><a href="#resume" class="active">View Resume</a></li>
+        <li><a href="#top">About Me</a></li>
+        <li><a href="#projects">Data Science Projects</a></li>
+        <li><a href="#resume">View Resume</a></li>
       </ul>
     </nav>
   </div>
@@ -79,67 +68,59 @@
   {{ content }}
 
   <!-- Smooth Scrolling JavaScript -->
- <script>
-  // Function to scroll to the target section
-  function scrollToTarget(targetId) {
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      const offset = 20; // Adjust the offset as needed
-      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-
-      // Update the URL without a page reload
-      window.history.pushState({}, '', `#${targetId}`);
-    }
-  }
-
-  // Intersection Observer function to handle section visibility
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const targetId = entry.target.id;
-
-        // Remove underline and bold formatting from all buttons
-        document.querySelectorAll('#scroll-buttons a').forEach(button => {
-          button.style.textDecoration = 'none';
-          button.style.fontWeight = 'normal';
+  <script>
+    // Function to scroll to the target section
+    function scrollToTarget(targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const offset = 20; // Adjust the offset as needed
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
         });
 
-        // Apply underline and bold formatting to the current button
-        const currentButton = document.querySelector(`#scroll-buttons a[href="#${targetId}"]`);
-        if (currentButton) {
-          currentButton.style.textDecoration = 'underline';
-          currentButton.style.fontWeight = 'bold';
-        }
+        // Update the URL without a page reload
+        window.history.pushState({}, '', `#${targetId}`);
       }
-    });
-  });
+    }
 
-  // Observe each section
-  document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
-  });
-
-  // Add click event listeners to the navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href').substring(1);
+    // Function to handle click events on navigation links
+    function handleNavLinkClick(event, targetId) {
+      event.preventDefault();
       scrollToTarget(targetId);
+    }
+
+    // Add click event listeners to the navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').substring(1);
+        handleNavLinkClick(e, targetId);
+      });
     });
-  });
-</script>
 
+    // JavaScript to add underlines to active buttons while scrolling
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('.section');
+      const navButtons = document.querySelectorAll('#scroll-buttons a');
 
-  <div class="page__footer">
-    <footer>
-      {% include footer/custom.html %}
-      {% include footer.html %}
-    </footer>
-  </div>
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const targetId = section.id;
 
-  {% include scripts.html %}
+        // Check if the section is in the viewport
+        if (rect.top <= 50 && rect.bottom >= 50) {
+          // Remove the 'active' class from all buttons
+          navButtons.forEach(button => button.classList.remove('active'));
+
+          // Add the 'active' class to the corresponding button
+          const currentButton = document.querySelector(`#scroll-buttons a[href="#${targetId}"]`);
+          if (currentButton) {
+            currentButton.classList.add('active');
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
