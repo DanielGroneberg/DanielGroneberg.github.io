@@ -36,6 +36,7 @@ Best performing model was a stacking classifier model using logistic regressor a
 <div id="skills"></div>
 <!-- {#skills} -->
 &nbsp;
+
 **Technologies:** Jupyter • GitHub • Git Bash • PostgreSQL • SQLite • Google Colab • EC2 • S3 • AWS BigQuerry • Tableau • RESTful APIs • R • RStudio • Tidyverse • CLI • ESRI ArcGIS • QGIS • wget • curl
 &nbsp;
 **Skills:** Data Cleaning • Predictive Modeling • Supervised and Unsupervised Learning • Data Management Data Visualization • NLP • Image Classification • Data Collection
