@@ -55,11 +55,6 @@
     body {
       background-color: #FFF;
     }
-
-    /* Add underlines for active buttons */
-    #scroll-buttons a.active {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
@@ -68,7 +63,7 @@
     <nav>
       <ul>
         <!-- Change the href attribute to #top -->
-        <li><a href="#top" class="active">About Me</a></li>
+        <li><a href="#top">About Me</a></li>
         <li><a href="#projects">Data Science Projects</a></li>
         <li><a href="#resume">View Resume</a></li>
       </ul>
@@ -118,7 +113,7 @@
     }
 
     // Add click event listeners to the navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('#scroll-buttons a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href').substring(1);
         handleNavLinkClick(e, targetId);
@@ -145,11 +140,6 @@
           button.classList.remove('active');
         }
       });
-
-      // Ensure that the "About Me" button is active when you scroll back to the top
-      if (window.scrollY === 0) {
-        document.querySelector('#scroll-buttons a[href="#top"]').classList.add('active');
-      }
     });
   </script>
 
