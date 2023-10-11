@@ -10,8 +10,6 @@ redirect_from:
 ---
 <div id="about"></div>
 <!-- {#about} -->
-&nbsp;
-
 ## About Me
 My introduction to data science began as an undergraduate at Western Washington University where I used Python and ArcGIS to create probabilistic landslide models, forecast precipitation, and model other complex processes. These projects taught me how to handle databases, engineer datasets and create compelling visualizations. Ever since, I’ve been dedicated to learning the skills that will allow me to make sense of big systems using technology. My favorite project I’ve completed since then involved scraping over 50 years of textual data from the Federal Reserve and engineering a dataset using key economic metrics to forecast interest rates.
 <div id="skills"></div>
