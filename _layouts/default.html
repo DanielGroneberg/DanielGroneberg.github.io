@@ -39,15 +39,21 @@
       font-weight: normal;
     }
 
-    /* Style for the "About Me" button initially underlined */
+    /* Style for the "About Me" button */
     #scroll-buttons a:first-child {
       font-weight: bold;
       font-size: 28px;
+      text-decoration: underline; /* Initially underlined */
     }
 
-    /* Add underlines for active buttons */
-    #scroll-buttons a.active {
-      text-decoration: underline;
+    /* Style for "Data Science Projects" and "View Resume" buttons */
+    #scroll-buttons a:nth-child(2),
+    #scroll-buttons a:nth-child(3) {
+      font-size: 18px;
+    }
+
+    body {
+      background-color: #FFF;
     }
   </style>
 </head>
@@ -69,6 +75,17 @@
 
   <!-- Smooth Scrolling JavaScript -->
   <script>
+    // Function to scroll to the top of the page
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+      // Update the URL without a page reload
+      window.history.pushState({}, '', '/');
+    }
+
     // Function to scroll to the target section
     function scrollToTarget(targetId) {
       const targetElement = document.getElementById(targetId);
@@ -88,39 +105,51 @@
     // Function to handle click events on navigation links
     function handleNavLinkClick(event, targetId) {
       event.preventDefault();
-      scrollToTarget(targetId);
+      if (targetId === 'top') {
+        scrollToTop(); // Scroll to the top if targetId is 'top'
+      } else {
+        scrollToTarget(targetId);
+      }
     }
 
     // Add click event listeners to the navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('#scroll-buttons a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href').substring(1);
         handleNavLinkClick(e, targetId);
       });
     });
 
-    // JavaScript to add underlines to active buttons while scrolling
-    window.addEventListener('scroll', function() {
+    // JavaScript to add underlines to active buttons
+    document.addEventListener('scroll', function() {
       const sections = document.querySelectorAll('.section');
-      const navButtons = document.querySelectorAll('#scroll-buttons a');
+      let currentSection = null;
 
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        const targetId = section.id;
-
-        // Check if the section is in the viewport
         if (rect.top <= 50 && rect.bottom >= 50) {
-          // Remove the 'active' class from all buttons
-          navButtons.forEach(button => button.classList.remove('active'));
+          currentSection = section.id;
+        }
+      });
 
-          // Add the 'active' class to the corresponding button
-          const currentButton = document.querySelector(`#scroll-buttons a[href="#${targetId}"]`);
-          if (currentButton) {
-            currentButton.classList.add('active');
-          }
+      const navButtons = document.querySelectorAll('#scroll-buttons a');
+      navButtons.forEach(button => {
+        if (button.getAttribute('href') === `#${currentSection}`) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
         }
       });
     });
   </script>
+
+  <div class="page__footer">
+    <footer>
+      {% include footer/custom.html %}
+      {% include footer.html %}
+    </footer>
+  </div>
+
+  {% include scripts.html %}
 </body>
 </html>
