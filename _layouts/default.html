@@ -45,7 +45,7 @@
       font-weight: bold;
     }
 
-    /* Style for "Data Science Projects" and "View Resume" buttons */
+    /* Style for "Data Science Projects" and "View Resume" buttons when active */
     #scroll-buttons a:nth-child(2).active,
     #scroll-buttons a:nth-child(3).active {
       text-decoration: underline;
@@ -69,8 +69,8 @@
       <ul>
         <!-- Change the href attribute to #top -->
         <li><a href="#top" class="active">About Me</a></li>
-        <li><a href="#projects">Data Science Projects</a></li>
-        <li><a href="#resume">View Resume</a></li>
+        <li><a href="#projects" class="active">Data Science Projects</a></li>
+        <li><a href="#resume" class="active">View Resume</a></li>
       </ul>
     </nav>
   </div>
@@ -143,14 +143,6 @@
           button.classList.add('active');
         } else {
           button.classList.remove('active');
-        }
-        // Add the following line to retain underlining for active buttons
-        if (button.classList.contains('active')) {
-          button.style.textDecoration = 'underline';
-          button.style.fontWeight = 'bold';
-        } else {
-          button.style.textDecoration = 'none';
-          button.style.fontWeight = 'normal';
         }
       });
     });
