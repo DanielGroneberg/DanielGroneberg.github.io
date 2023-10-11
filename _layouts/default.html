@@ -39,21 +39,26 @@
       font-weight: normal;
     }
 
-    /* Style for the "About Me" button */
-    #scroll-buttons a:first-child {
+    /* Style for the "About Me" button initially underlined */
+    #scroll-buttons a:first-child.active {
+      text-decoration: underline;
       font-weight: bold;
-      font-size: 28px;
-      text-decoration: underline; /* Initially underlined */
     }
 
     /* Style for "Data Science Projects" and "View Resume" buttons */
-    #scroll-buttons a:nth-child(2),
-    #scroll-buttons a:nth-child(3) {
-      font-size: 18px;
+    #scroll-buttons a:nth-child(2).active,
+    #scroll-buttons a:nth-child(3).active {
+      text-decoration: underline;
+      font-weight: normal; /* You can modify font weight as needed */
     }
 
     body {
       background-color: #FFF;
+    }
+
+    /* Add underlines for active buttons */
+    #scroll-buttons a.active {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -63,7 +68,7 @@
     <nav>
       <ul>
         <!-- Change the href attribute to #top -->
-        <li><a href="#top">About Me</a></li>
+        <li><a href="#top" class="active">About Me</a></li>
         <li><a href="#projects">Data Science Projects</a></li>
         <li><a href="#resume">View Resume</a></li>
       </ul>
@@ -113,7 +118,7 @@
     }
 
     // Add click event listeners to the navigation links
-    document.querySelectorAll('#scroll-buttons a').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href').substring(1);
         handleNavLinkClick(e, targetId);
@@ -138,6 +143,14 @@
           button.classList.add('active');
         } else {
           button.classList.remove('active');
+        }
+        // Add the following line to retain underlining for active buttons
+        if (button.classList.contains('active')) {
+          button.style.textDecoration = 'underline';
+          button.style.fontWeight = 'bold';
+        } else {
+          button.style.textDecoration = 'none';
+          button.style.fontWeight = 'normal';
         }
       });
     });
