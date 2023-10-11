@@ -10,13 +10,13 @@ redirect_from:
 ---
 <div id="about"></div>
 <!-- {#about} -->
-## About Me
+# About Me
 My introduction to data science began as an undergraduate at Western Washington University where I used Python and ArcGIS to create probabilistic landslide models, forecast precipitation, and model other complex processes. These projects taught me how to handle databases, engineer datasets and create compelling visualizations. Ever since, I’ve been dedicated to learning the skills that will allow me to make sense of big systems using technology. My favorite project I’ve completed since then involved scraping over 50 years of textual data from the Federal Reserve and engineering a dataset using key economic metrics to forecast interest rates.
 <div id="skills"></div>
 <!-- {#skills} -->
 &nbsp;
 
-## Skills
+# Skills
 **Technologies:** Jupyter • GitHub • Git Bash • PostgreSQL • SQLite • Google Colab • EC2 • S3 • AWS BigQuerry • Tableau • RESTful APIs • R • RStudio • Tidyverse • CLI • ESRI ArcGIS • QGIS • wget • curl&nbsp;
 
 **Skills:** Data Cleaning • Predictive Modeling • Supervised and Unsupervised Learning • Data Management Data Visualization • NLP • Image Classification • Data Collection
@@ -27,7 +27,7 @@ My introduction to data science began as an undergraduate at Western Washington 
 <!-- {projects} -->
 &nbsp;
 
-## Projects
+# Projects
 **[Timeseries Forecast of Federal Reserve Interest Rates](https://github.com/DanielGroneberg/DSI-Project-5) | Python: BeautifulSoup, NLTK, statsmodels, sklearn**
 ![Economic Metrics](/images/plots.png)
 *Economic metrics used to develop vector autoregression including sentiment feature engineered from scraped Beige Book reports.*
@@ -51,5 +51,5 @@ Best performing model was a stacking classifier model using logistic regressor a
 <!-- {#resume} -->
 &nbsp;
 
-## View Resume
+# View Resume
 <object data="{{ site.url }}{{ site.baseurl }}/files/daniel_groneberg_dsi_resume_template.pdf" width="900" height="900" type="application/pdf" class="resume"></object>
