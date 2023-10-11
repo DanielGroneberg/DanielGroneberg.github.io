@@ -33,6 +33,11 @@ Used **Python** to forecast soil moisture in the United States. Extracted 64 yea
 Developed a subreddit classification model using 7,155 posts scraped from r/Jobs and r/AntiWork. Examined how sentiment varied between the two subreddits when certain words like "manager" or "interview" were found in a post. Token vectorized the text data and experimented with logistic regression, kNN, random forest, and gradient-boosted models.
 
 Best performing model was a stacking classifier model using logistic regressor and random forest classifier as the base estimators with a gradient-boosting classifier as the final estimator, which achieved a classification accuracy score of .85.
+<div id="skills"></div>
+<!-- {#skills} -->
+Technologies: Jupyter • GitHub • Git Bash • PostgreSQL • SQLite • Google Colab • EC2 • S3 • AWS BigQuerry • Tableau • Linux • R • GCP • Tidyverse • CLI • ESRI ArcGIS • QGIS • wget • curl
+Skills: Data Cleaning • PCA • Predictive Modeling • Supervised and Unsupervised Learning • Data Management Data Visualization • NLP • Image Classification • Data Collection • Hydrology
+Python Libraries: Numpy • Pandas • Matplotlib • Seaborn • Sklearn • TensorFlow • Keras • Flask statsmodels • NLTK • spaCy • Streamlit • pmdarima • sktime • netCDF4 • BeautifulSoup • pathlib • Cartopy
 <div id="resume"></div>
 <!-- {#resume} -->
 &nbsp;
