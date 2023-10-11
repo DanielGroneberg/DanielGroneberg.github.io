@@ -27,7 +27,7 @@ My introduction to data science began as an undergraduate at Western Washington 
 <!-- {projects} -->
 &nbsp;
 
-# Projects
+# Data Science Projects
 **[Timeseries Forecast of Federal Reserve Interest Rates](https://github.com/DanielGroneberg/DSI-Project-5) | Python: BeautifulSoup, NLTK, statsmodels, sklearn**
 ![Economic Metrics](/images/plots.png)
 *Economic metrics used to develop vector autoregression including sentiment feature engineered from scraped Beige Book reports.*
