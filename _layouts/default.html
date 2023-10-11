@@ -39,17 +39,17 @@
       font-weight: normal;
     }
 
-    /* Style for the "About Me" button initially underlined */
-    #scroll-buttons a:first-child.active {
-      text-decoration: underline;
+    /* Style for the "About Me" button */
+    #scroll-buttons a:first-child {
       font-weight: bold;
+      font-size: 28px;
+      text-decoration: underline; /* Initially underlined */
     }
 
     /* Style for "Data Science Projects" and "View Resume" buttons */
-    #scroll-buttons a:nth-child(2).active,
-    #scroll-buttons a:nth-child(3).active {
-      text-decoration: underline;
-      font-weight: normal; /* You can modify font weight as needed */
+    #scroll-buttons a:nth-child(2),
+    #scroll-buttons a:nth-child(3) {
+      font-size: 18px;
     }
 
     body {
@@ -145,6 +145,11 @@
           button.classList.remove('active');
         }
       });
+
+      // Ensure that the "About Me" button is active when you scroll back to the top
+      if (window.scrollY === 0) {
+        document.querySelector('#scroll-buttons a[href="#top"]').classList.add('active');
+      }
     });
   </script>
 
